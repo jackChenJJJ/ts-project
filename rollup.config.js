@@ -1,14 +1,16 @@
 import typescript from 'rollup-plugin-typescript'
 import sourceMaps from 'rollup-plugin-sourcemaps'
+import json from '@rollup/plugin-json'
 
 export default {
     input: './src/index.ts',
-    plugin: [
+    plugins: [
         typescript({
             exclude: 'node_modules/**',
             typescript: require("typescript")
         }),
-        sourceMaps()
+        sourceMaps(),
+        json(),
     ],
     output: [
         {
@@ -21,7 +23,8 @@ export default {
         },
         {
             format: 'umd',
-            file: 'dist/ts.umd.js'
+            file: 'dist/ts.umd.js',
+            name: 'Vue'
         }
     ]
 }

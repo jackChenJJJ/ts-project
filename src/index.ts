@@ -1,5 +1,5 @@
-let version: string = "0.0.1"
+let version: string = '0.0.1';
 
-export default ():string =>{
-    return `this is version is ${version}`
-}
+export default (): string => {
+    return `this is version is ${version}`;
+};
